@@ -80,3 +80,14 @@ console.log ("A soma deles é = " + x)
 console.log ("O produto deles é = " + y)
 
 
+let resultado = 3 + 4
+console.log ('O resultado é ', resultado)
+
+resultado = 3*5/2
+console.log ('O resultado é ', resultado)
+
+resultado = (5-4)*-1
+console.log ('O resultado é ', resultado)
+
+resultado = 234%5
+console.log ('O resultado é ', resultado)
