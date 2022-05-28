@@ -5,13 +5,12 @@
 
 body {
     background-color: rgb(245, 248, 243);
-    scrollbar-color: rgb(255, 202, 150) rgb(245, 154, 142) ;
-    
+    min-width: 590px;
 }
 
 header {
    
-    background-color: rgb(255, 202, 150);
+    background-color: rgb(71, 171, 145);
     height: 42px;
 }
 
@@ -34,7 +33,7 @@ h2 {
 
 .topnav a {
     float: right;
-    color: purple;
+    color: rgb(245, 248, 243);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -42,16 +41,72 @@ h2 {
 }
 
 .topnav a:hover {
-    background-color: rgba(245, 154, 142, 0.452);
-    color: white;
+    background-color: rgb(245, 212, 142);
+    color: grey;
+    border-radius: 0 0 20% 20%
 }
 
 .topnav a.active {
-    background-color: rgb(245, 154, 142);
+    background-color: rgb(192,41,50);
     color: white;
+    border-radius: 0 0 20% 20%
 }
 
 .logo {
+    width: auto;
+    height: 100px;
+    z-index: 1000;
+    position: absolute;
+    border-radius: 0 0 10% 0;
+}
+
+.avatarbox {
     text-align: center;
 
+}
+
+.roundbox {
+    border-radius: 25%;
+}
+
+.avatarfoot {
+    text-align: center;
+}
+
+.bh {
+    max-width: 100%;
+    width: auto;
+    line-height: 0;
+}
+
+.parentbox {
+    flex-grow: 1;
+    margin: 0px auto;
+    position: relative;
+    width: auto;
+    display: flex;
+    max-width: 50%;
+    justify-content: center;
+}
+
+.childbox {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    text-align: justify;
+    margin-top: 0px;
+    padding: 10%;
+    background-color: rgb(71, 171, 145);
+    width: 100%;
+}
+
+.nicepadding {
+    padding: auto;
+    border-radius: 10px;
+
+}
+
+.frame {
+    border-radius: 10%;
+    display:block;
+    padding: 100px;
 }
