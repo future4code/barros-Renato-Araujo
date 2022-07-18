@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    font-weight: bolder;
+    justify-content: space-between;
+    background-color: mediumvioletred;
+    height: 50px;
+    align-items: center;
+}
+
+main {
+    display: flex;
+
+}
+
+nav {
+    width: 250px;
+    background-color: #f2d0e0;
+    height: auto;
+    padding: 1rem 0;
+    min-width: 250px;
+}
+
+nav img {
+    padding: 0 1rem;
+}
+
+footer {
+    flex-direction: row;
+    background-color: mediumvioletred;
+    height: 42px;
+    text-align: center;
+    justify-content: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.prateleira {
+    display: flex;
+
+    flex-wrap: wrap;
+    margin: 10px;
+
+}
+
+.logo {
+    padding: 12px
+}
+
+.titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding:12px;
+}
+
+p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.icon2 {
+    width: 15px;
+    height: 15px;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.foto {
+    width: 200px;
+}
+
+.textobolo {
+    text-align: center;
+    font-size: smaller;
+}
