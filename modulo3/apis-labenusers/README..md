@@ -1,0 +1,1 @@
+Hola, esto es solo un maniquí. Solo soy un pobre chico, no necesito simpatía. El ejercicio real se entregará según el nuevo plazo. Adiós y gracias por todo el pescado.
