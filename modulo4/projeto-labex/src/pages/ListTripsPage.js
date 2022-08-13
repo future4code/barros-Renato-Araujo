@@ -1,11 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BASE_URL } from '../constants/constants';
+import useRequestData from '../hooks/useRequestData';
 
-export default function ListTripsPage() {
+
+function ListTripsPage() {
+const lista = useRequestData(BASE_URL)
 
     return (
     <div>
-        <p>ListTripsPage</p>
+        <p>Lista de trips:</p>
+        {lista.map((trip) => {
+            return <p>{trip.name}</p>
+        })}
     </div>
     )
 }
+export default ListTripsPage

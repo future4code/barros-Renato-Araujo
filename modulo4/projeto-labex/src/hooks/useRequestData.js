@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import { BASE_URL } from '../constants/contants'
 
-const useRequestData=()=>{
+const useRequestData=(url)=>{
     const [listaTrips, setListaTrips] = useState([])
     useEffect(() => {
-        axios.get(`${BASE_URL}trips`)
+        axios.get(`${url}trips`)
         .then(response =>{
-            setListaTrips(response.data)
+            setListaTrips(response.data.trips)
         }).catch(error => {
             console.log(error)
         })
@@ -15,4 +14,4 @@ const useRequestData=()=>{
     return listaTrips
     
 }
-export default useRequestData
+export default useRequestData;
