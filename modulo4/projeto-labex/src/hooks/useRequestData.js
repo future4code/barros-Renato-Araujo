@@ -2,16 +2,24 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 
 const useRequestData=(url)=>{
-    const [listaTrips, setListaTrips] = useState([])
+    const [dado, setDado] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [erro, setError] = useState(false)
+
+    
+    
     useEffect(() => {
-        axios.get(`${url}trips`)
+        setIsLoading(true)
+        axios.get(url)
         .then(response =>{
-            setListaTrips(response.data.trips)
+            setIsLoading(false)
+            setDado(response.data)
         }).catch(error => {
-            console.log(error)
+            setIsLoading(false)
+            setError(error)
         })
-        }, [])
-    return listaTrips
+        }, [url])
+    return [dado, isLoading, erro]
     
 }
 export default useRequestData;

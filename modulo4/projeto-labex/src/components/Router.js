@@ -20,6 +20,7 @@ function Router() {
             <Route path="/ListTripsPage" element={<ListTripsPage />} />
             <Route path="/LoginPage" element={<LoginPage />} />
             <Route path="/TripDetailsPage" element={<TripDetailsPage />} />
+            <Route path="/HomePage" element={<HomePage />} />
         </Routes>
     </BrowserRouter>
   );

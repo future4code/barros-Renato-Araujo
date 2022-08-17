@@ -16,8 +16,10 @@ const Navigate = useNavigate()
 return (
     <div>
         <p>LoginPage</p>
-        <section>
-     
+    <form>
+      
+    </form>
+    <section> 
       <button onClick={ goToHome }>Home</button>
       <button onClick={ goToLastPage }>Voltar</button>
     </section>

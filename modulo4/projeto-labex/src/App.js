@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <p>Teste</p>
-      <Router />
+      <Router />      
     </div>
   );
 }
