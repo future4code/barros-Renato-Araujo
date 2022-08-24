@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate  } from 'react-router-dom';
+import FormLogin from '../components/FormLogin';
+import IsLogged from '../components/IsLogged';
 
 export default function LoginPage() {
     
@@ -16,6 +18,9 @@ const Navigate = useNavigate()
 return (
     <div>
         <p>LoginPage</p>
+        {localStorage.token && <IsLogged />}
+        {!localStorage.token && <FormLogin />}
+
     <form>
       
     </form>

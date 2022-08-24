@@ -15,7 +15,7 @@ export default function HomePage() {
         <p>HomePage</p>
         <section>
   
-      <button onClick={ goToLoginPage }>Login</button>
+      <button onClick={ goToLoginPage }>Área de Administrador</button>
       <button onClick={ goToListTripsPage }>Lista de Viagens</button>
     </section>
     </div>

@@ -1,8 +1,10 @@
 import axios from "axios"
 import { useState } from "react"
 import { BASE_URL } from "../constants/constants"
+import { useNavigate } from "react-router-dom"
 
 export default function FormLogin() {
+    const Navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
 
@@ -15,19 +17,30 @@ export default function FormLogin() {
 
     console.log(email, senha)
 
-    const body = {
+    const url = `${BASE_URL}login`
+
+     const body = {
         "email": email,
         "password": senha
     }
-
-    const url = `${BASE_URL}login`
     const headers = 'Content-Type: application/json'
 
     const fazerLogin = (event) => {
         event.preventDefault()
         axios.post(url, body, headers)
+        .then((response) => {
+            localStorage.setItem("token", response.data.token)
+            localStorage.setItem("userName", email)
+                Navigate("/adminHomePage")
+            })
+            .catch((error) => {
+                alert(`USUÁRIO NÃO CADASTRADO OU SENHA INVÁLIDA!`)
+            })
+        
         console.log(body)
     }
+
+
 
     return (
         <div>

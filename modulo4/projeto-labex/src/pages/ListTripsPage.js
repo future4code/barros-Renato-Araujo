@@ -7,9 +7,13 @@ import {useNavigate} from 'react-router-dom'
 function ListTripsPage() {
 const [dado, isLoading, erro] = useRequestData(`${BASE_URL}trips`)
 const Navigate = useNavigate()
+
+
 const tripsList =
     dado.trips && dado.trips.map((t) => {
-            return <li>{t.name}</li>
+       
+    localStorage.setItem("tripId", t.id)
+            return <li>{t.name}<button>Apply</button></li>
     }
     )
     const goToApplicationFormPage = () => {
