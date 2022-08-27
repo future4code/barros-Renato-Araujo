@@ -2,7 +2,7 @@ export const goToHomePage=(navigate)=>{
     navigate(`/`)
 }
 export const goToAdminHomePage=(navigate)=>{
-    navigate(`AdminHomePage`)
+    navigate(`/AdminHomePage`)
 }
 export const goToCreateTripPage=(navigate)=>{
     navigate(`/CreateTripPage`)

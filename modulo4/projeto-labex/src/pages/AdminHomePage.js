@@ -1,8 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import * as Rot from '../components/Coordinator'
+import { useAuth } from '../hooks/useAuth';
+import * as style from '../components/styled'
 
 export default function AdminHomePage() {
+    useAuth()
     const Navigate = useNavigate()
     const logOut = () => {
         localStorage.clear()
@@ -10,14 +13,14 @@ export default function AdminHomePage() {
     }
     
     return (
-    <div>
+    <style.Box>
         <p>AdminHomePage</p>
-        <button onClick={()=>{Rot.goToCreateTripPage(Navigate)}}>Create Trip</button>
-        <button onClick={()=>{Rot.goToTripDetailsPage(Navigate)}}>Trip Details List</button>
-        <button onClick={()=>{logOut()}}>Logout</button>
+        <style.But onClick={()=>{Rot.goToCreateTripPage(Navigate)}}>Create Trip</style.But>
+        <style.But onClick={()=>{Rot.goToTripDetailsPage(Navigate)}}>Trip Details List</style.But>
+        <style.But onClick={()=>{logOut()}}>Logout</style.But>
         
-        <button onClick={()=>{Rot.goToHomePage(Navigate)}}>Back to Home</button>
+        <style.But onClick={()=>{Rot.goToHomePage(Navigate)}}>Back to Home</style.But>
       
-    </div>
+    </style.Box>
     )
 }

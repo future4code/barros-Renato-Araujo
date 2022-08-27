@@ -1,12 +1,13 @@
 import React from 'react';
 import Router from './components/Router';
+import styled from 'styled-components';
+import * as style from './components/styled'
 
 function App() {
   return (
-    <div>
-      <p>Teste</p>
+    <style.AppBG>
       <Router />      
-    </div>
+    </style.AppBG>
   );
 }
 

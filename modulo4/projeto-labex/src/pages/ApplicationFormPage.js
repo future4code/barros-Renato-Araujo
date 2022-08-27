@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import  FormLogin from '../components/FormLogin';
 import Axios from 'axios';
+import * as style from '../components/styled'
 
 export default function ApplicationFormPage() {
 
@@ -34,7 +35,7 @@ export default function ApplicationFormPage() {
 
 
     return (
-    <div>
+    <style.Box>
         <p>ApplicationFormPage</p>
     
      <form >
@@ -96,8 +97,8 @@ export default function ApplicationFormPage() {
                     <option>USSR</option>
 
                      </select>
-           <button onClick={sendForm}>Submit</button>     
+           <style.But onClick={sendForm}>Submit</style.But>     
         </form>
-    </div>
+    </style.Box>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import * as style from '../components/styled'
 
 export default function HomePage() {
     const Navigate = useNavigate()
@@ -11,13 +12,13 @@ export default function HomePage() {
         Navigate("/ListTripsPage")
     }
     return (
-    <div>
-        <p>HomePage</p>
+    <style.Box>
+        <style.Logo>LabeX</style.Logo>
         <section>
   
-      <button onClick={ goToLoginPage }>Área de Administrador</button>
-      <button onClick={ goToListTripsPage }>Lista de Viagens</button>
+      <style.But onClick={ goToLoginPage }>Área de Administrador</style.But>
+      <style.But onClick={ goToListTripsPage }>Lista de Viagens</style.But>
     </section>
-    </div>
+    </style.Box>
     )
 }
