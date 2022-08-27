@@ -1,11 +1,21 @@
-import { React, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import  FormLogin from '../components/FormLogin';
-import Axios from 'axios';
-import * as style from '../components/styled'
+import { React, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FormLogin from "../components/FormLogin";
+import Axios from "axios";
+import {
+  Button,
+  ButtonGroup,
+  Center,
+  Box,
+  Flex,
+  Spacer,
+  Heading,
+  Input,
+  FormLabel,
+  Select,
+} from "@chakra-ui/react";
 
 export default function ApplicationFormPage() {
-
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [application, setApplication] = useState("");
@@ -26,20 +36,26 @@ export default function ApplicationFormPage() {
   };
   const handleSelectCountry = (e) => {
     setCountry(e.target.value);
-  }
+  };
 
   const sendForm = (e) => {
-    e.preventDefault()
-    console.log (name)
-}
+    e.preventDefault();
+    console.log(name);
+  };
 
+  return (
+    <Center w="100%" h="100%">
+      <Box bg="#530f1e" variant="solid" p="20px" borderRadius="10px" w='400px'>
+        <Heading size="md" color="#f8bc04" pb="20px">
+          ApplicationFormPage
+        </Heading>
 
-    return (
-    <style.Box>
-        <p>ApplicationFormPage</p>
-    
-     <form >
-          <input
+        <form>
+          <Input
+            
+            my='10px'
+            color="#f8bc04"
+            bg="#051427"
             name="name"
             id="name"
             type="text"
@@ -48,8 +64,12 @@ export default function ApplicationFormPage() {
             onChange={handleInputName}
             minLength="5"
             required
-            />
-          <input
+          />
+          <Input
+            
+            my='10px'
+            color="#f8bc04"
+            bg="#051427"
             name="age"
             id="age"
             type="number"
@@ -58,8 +78,12 @@ export default function ApplicationFormPage() {
             onChange={handleInputAge}
             min="18"
             required
-            />
-          <input
+          />
+          <Input
+            
+            my='10px'
+            color="#f8bc04"
+            bg="#051427"
             name="application"
             id="application"
             type="text"
@@ -68,8 +92,12 @@ export default function ApplicationFormPage() {
             onChange={handleInputApplication}
             minLength="30"
             required
-            />
-          <input
+          />
+          <Input
+            
+            my='10px'
+            color="#f8bc04"
+            bg="#051427"
             name="occupation"
             id="occupation"
             type="text"
@@ -78,27 +106,39 @@ export default function ApplicationFormPage() {
             onChange={handleInputOccupation}
             minLength="10"
             required
-            />
-          
-          
-          <select 
-            name="country" 
+          />
+
+          <Select
+            
+            my='10px'
+            color="#f8bc04"
+            bg="#051427"
+            name="country"
             id="country"
-            value={country} 
-            onChange={handleSelectCountry} 
-            required>
-                {/* {countriesList.nome && countriesList.map((option, index) => (
+            value={country}
+            onChange={handleSelectCountry}
+            required
+          >
+            {/* {countriesList.nome && countriesList.map((option, index) => (
                     console.log(`hi`),
                 <option key={index} value= {option.nome.abreviado}>
                     {option.nome}
                 </option>))} */}
-                    <option>Brazil</option>
-                    <option>United States</option>
-                    <option>USSR</option>
-
-                     </select>
-           <style.But onClick={sendForm}>Submit</style.But>     
+            <option>Brazil</option>
+            <option>United States</option>
+            <option>USSR</option>
+          </Select>
+          <Button
+            type="submit"
+            bg="#f8bc04"
+            color="#051427"
+            colorScheme="yellow"
+            onClick={sendForm}
+          >
+            Submit
+          </Button>
         </form>
-    </style.Box>
-    )
+      </Box>
+    </Center>
+  );
 }
