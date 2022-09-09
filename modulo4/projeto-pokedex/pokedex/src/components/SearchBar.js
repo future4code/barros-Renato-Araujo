@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import Icon from '../media/icon.png'
+import { Context } from '../context/Context';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,7 +52,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchBar({pokeFilter}) {
+export default function SearchBar() {
+
+    const pokeContext = React.useContext(Context)
+
+    const pokeFilter = (name) => {
+        let filteredPokes = [];
+        if (name === "") {
+          pokeContext.getPoke();
+        }
+        
+        for (var i in pokeContext.pokes) {
+          if (pokeContext.pokes[i].data.name.includes(name)) {
+            filteredPokes.push(pokeContext.pokes[i]);
+          }
+        }
+        pokeContext.setPokes(filteredPokes);
+      };
+
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "2em" }}>
       <AppBar position="static" sx={{backgroundColor: "red"}}>

@@ -1,47 +1,22 @@
 import { Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PokeCard from "../components/PokeCard";
-import SearchBar from "../components/SearchBar";
+import { Context } from "../context/Context";
 
 export const PokeListScreen = () => {
-  const [pokes, setPokes] = useState([]);
+  const pokeContext = useContext(Context);
 
   useEffect(() => {
-    getPoke();
+    pokeContext.getPoke();
   }, []);
 
-  const getPoke = () => {
-    let endpoints = [];
-    for (let i = 1; i < 150; i++) {
-      endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
-    }
-    axios
-      .all(endpoints.map((endpoint) => axios.get(endpoint)))
-      .then((res) => setPokes(res));
-  };
-
-  const pokeFilter = (name) => {
-    let filteredPokes = [];
-    if (name === "") {
-      getPoke();
-    }
-    console.log(name);
-    for (var i in pokes) {
-      if (pokes[i].data.name.includes(name)) {
-        filteredPokes.push(pokes[i]);
-      }
-    }
-    setPokes(filteredPokes);
-  };
-
   return (
-    <Box>
-      <SearchBar pokeFilter={pokeFilter} />
+    <Box sx={{width: '100%'}}>
       <Container>
         <Grid container>
-          {pokes.map((pokemon, key) => (
+          {pokeContext.pokes.map((pokemon, key) => (
             <Grid
               item
               xs={4}
@@ -50,8 +25,9 @@ export const PokeListScreen = () => {
               justifyContent="center"
             >
               <PokeCard
+                key={pokemon.data.id}
                 name={pokemon.data.name}
-                image={pokemon.data.sprites.front_default}
+                image={pokemon.data.sprites.other.home.front_default}
                 types={pokemon.data.types}
               />
             </Grid>

@@ -6,8 +6,17 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
+import { Context } from "../context/Context";
+import { useContext } from "react";
 
-export default function pokeCard({ name, image, types }) {
+export default function PokeCard({ id, name, image, types }) {
+    const pokeContext = useContext(Context)
+    
+    const addToPokedex = (name) => {
+        pokeContext.setPokedex([...pokeContext.pokedex, name])
+        console.log(pokeContext.pokedex)
+    }
+
     const typeHandler = () => {
         if (types[1]) {
             return types[0].type.name + " " + types[1].type.name
@@ -53,10 +62,13 @@ export default function pokeCard({ name, image, types }) {
         <Button variant="outlined" size="medium">
           Details
         </Button>
-        <Button variant="contained" size="large">
+        <Button onClick={addToPokedex} variant="contained" size="large">
           ADD
         </Button>
       </CardActions>
     </Card>
   );
+
+        
+
 }
