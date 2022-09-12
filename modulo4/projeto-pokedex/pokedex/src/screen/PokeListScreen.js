@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import PokeCard from "../components/PokeCard";
 import { Context } from "../context/Context";
 
@@ -13,22 +12,28 @@ export const PokeListScreen = () => {
   }, []);
 
   return (
-    <Box sx={{width: '100%'}}>
+    <Box
+      sx={{
+        width: "60%",
+        justifyContent: "center",
+        backgroundColor: "lightpink",
+        paddingTop: "30px",
+        borderTop: "solid",
+        borderRight: "solid",
+        borderColor: "black",
+      }}
+    >
       <Container>
-        <Grid container>
+        <Grid container spacing={1} justifyContent="start">
           {pokeContext.pokes.map((pokemon, key) => (
-            <Grid
-              item
-              xs={4}
-              key={key}
-              alignContent="center"
-              justifyContent="center"
-            >
+            <Grid item xs={3} key={key}>
               <PokeCard
-                key={pokemon.data.id}
+                page="list"
                 name={pokemon.data.name}
-                image={pokemon.data.sprites.other.home.front_default}
+                image={pokemon.data.sprites}
                 types={pokemon.data.types}
+                abilities={pokemon.data.abilities}
+                stats={pokemon.data.stats}
               />
             </Grid>
           ))}

@@ -10,12 +10,19 @@ function App() {
 
   const getPoke = () => {
     let endpoints = [];
-    for (let i = 1; i < 150; i++) {
+    for (let i = 1; i < 50; i++) {
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
     }
     axios
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
       .then((res) => setPokes(res));
+      
+      let pokeTest = ""
+
+      pokedex.forEach((poke) => {
+        pokeTest = poke.name
+      pokes.filter((pokeTest) => pokedex.data.name !== pokeTest.name)
+      })
   };
 
   return (

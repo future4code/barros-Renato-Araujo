@@ -6,9 +6,9 @@ import { PokeListScreen } from "./PokeListScreen";
 
 export default function MainScreen() {
   return (
-    <Box>
-      <SearchBar />
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+    <Box sx={{ minWidth: "1650px", minHeight: '100%', maxWidth: "100vw" }} >
+      <SearchBar sx={{ margin: "0" }}/>
+      <Box sx={{ display: "flex"}}>
         <PokeListScreen />
         <PokedexScreen />
       </Box>
