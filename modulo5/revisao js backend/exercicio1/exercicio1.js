@@ -12,7 +12,7 @@ const converteCelsius = (temp, type) => {
         
 
        
-    else {console.log(`${temp}° ${type} equivalem a 86° Farenheit!`)}}}
+    else {console.log(`${temp} ${type} equivalem a 86° Farenheit!`)}}}
     
 
 
