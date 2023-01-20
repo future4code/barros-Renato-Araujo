@@ -1,0 +1,27 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste222",
+    "email": "email22@email.com",
+    "password": "23432535"
+}
+
+###
+
+GET http://localhost:3003/user/getAll
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "Stallone: Cobra",
+    "description": "Você é um maldito, você é um... Cocô, e eu vou matar você",
+    "duration_in_minutes": 89,
+    "year_of_release": 1993
+}
+
+###
